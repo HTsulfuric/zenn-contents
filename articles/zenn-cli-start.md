@@ -2,7 +2,7 @@
 title: "Zenn cliの導入と、過去記事をGitHub連携した話"
 emoji: "🐙"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Zenn", "GitHub"]
+topics: ["Zenn", "GitHub", "zenn-cli"]
 published: true
 ---
 
