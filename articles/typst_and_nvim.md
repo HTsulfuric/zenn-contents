@@ -1,5 +1,5 @@
 ---
-title: "nvimでTypstを書くための環境準備"
+title: "NeovimでTypstを書くための環境準備"
 emoji: "🥳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Typst, Neovim]
