@@ -25,7 +25,7 @@ sh hoge.sh
 #function名とファイル名は一致している必要がある
 function mkcd
     # 引数が1つ以外のときエラー
-    if count $argv != 1
+    if  test (count $argv) -ne 1
         echo "Usage: mkcd <directory>"
         return 1
     end
