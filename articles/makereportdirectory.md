@@ -1,5 +1,5 @@
 ---
-title: "Typstのテンプレートファイルを作業ディレクトリに移すのを、シェルスクリプトで簡略化した話"
+title: "Typstのテンプレートファイルを作業ディレクトリに移すのを、fishのオートロード関数で簡単に"
 emoji: "🐟"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [typst, shell, fish]
