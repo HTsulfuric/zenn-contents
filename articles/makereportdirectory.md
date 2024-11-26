@@ -20,14 +20,18 @@ published: true
 
 # 実装
 
-```:~/.config/fish/functions/typinit.fish
-set header "#import "template.typ" : *
+以下のコードを`~/.config/fish/functions/typinit.fish`に保存する。
+
+```shell:~/.config/fish/functions/typinit.fish
+set header '#import "template.typ" : *
 
 #show:report.with(
     title: "",
     author: "",
-)"
+)
+'
 
+# 関数名とファイル名は同じにする
 function typinit
     # 引数が指定されているか確認
     if test (count $argv) -ne 1
