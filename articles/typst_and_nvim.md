@@ -14,6 +14,9 @@ published: true
 
 https://github.com/neovim/neovim/pull/30747
 
+[2025/03/17追記]
+nvim v0.10.4がstableになったので、この記事はもう古いです。最新のNeovimを使っていただければ特に問題ないと思います。
+
 # Neovim nightlyの準備
 
 ## Neovimのアンインストール
