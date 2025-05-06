@@ -122,6 +122,10 @@ https://zenn.dev/zenn/articles/zenn-cli-guide
 
 ここを参照する。
 
+0. 実行ディレクトリ
+
+以下のコードは`zenn`ディレクトリ以下で実行する。
+
 1. 新規記事の作成
 
 ```shell
