@@ -3,7 +3,7 @@ title: "ESP32-S3を用いたメガネ装着型カメラモジュール"
 emoji: "👓"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
-published: true
+published: false
 ---
 
 # はじめに
@@ -19,6 +19,6 @@ published: true
 
 ## XIAO ESP32-S3 Sense
 
-装着するにあたって小型軽量のものである必要があったため、ESP32を選択した。XIAO ESP32-S3と
+装着するにあたって小型軽量のマイコンを使用する必要があったため、ESP32を選択した。XIAO ESP32-S3 SenseとESP32-CAMなどが標準でカメラ(OV2640CMOS?)を搭載するポートがついてるため、候補にあがった。小型化とマイコンのパワーのトレードオフを考え、
 
 # 工事中!
