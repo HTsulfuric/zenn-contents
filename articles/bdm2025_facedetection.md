@@ -3,7 +3,7 @@ title: "ESP32-S3を用いたメガネ装着型カメラモジュール"
 emoji: "👓"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: []
-published: false
+published: true
 ---
 
 # はじめに
