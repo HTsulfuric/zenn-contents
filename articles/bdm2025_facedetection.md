@@ -12,7 +12,9 @@ published: true
 
 # やりたかったこと
 
-**人の顔が覚えられない!** これは、人の顔を見て話せない私の問題でしかないのだが、せっかくなので私の人間的成長以外の手段で解決してみたくなった。
+:::details 私の切実な悩み
+**人の顔が覚えられない！** これは、人の顔を見て話せない私の問題でしかないのだが、せっかくなので私の人間的成長以外の手段で解決してみたくなった。
+:::
 そこで、人の顔を覚える、認識する、という行為を外部に委託すればいいのではないか、というモチベーションで作成された。
 最終的には、ESP32-S3を用いて、メガネに装着できるカメラモジュールを作成し、PC側で顔認証を行い、LINE Notifyで通知する、というものを作成した。
 
@@ -65,21 +67,20 @@ https://github.com/RuiSantosdotme/arduino-esp32-CameraWebServer
 
 WebSocketの関数などをArudiono IDEのlibraryでAsync WebServerから持ってくることができたため、ESP32側のコードはあまり難しくなかった。
 
-以下起動後のESP32側のコードの流れを示す。
-
+:::details 起動後のESP32側のコードの流れ
 1. ESP32の起動
    起動するとまずWiFiに接続。 WiFiのSSIDとパスはハードコーディングされている。
 2. WiFiに接続するとHTTPサーバーを起動する。この時点ではカメラは起動していないため。サーバーのタスクのみが起動している。
 3. WebSocketの接続があり、かつWebSocket越しから"start_stream"のメッセージが来ると、カメラを初期化し、ストリーミングを開始する。
 4. ストリーミング中は、WebSocket越しに"stop_stream"のメッセージが来るまで、カメラから取得した画像をJPEG形式でPC側に送信する。
 5. "stop_stream"のメッセージが来ると、カメラを停止し、psramを解放する。Websocketの接続が切れた場合も同様に処理する。
+:::
 
 ## Python側のコード
 
 GUI(Tkinter)、Websocket、Face_recognitionの3つを動かす。Tkinterはメインスレッドで動かし、WebSocketとFace_recognitionを別スレッドで動かすようにした。これにより、Tkinterのメインスレッドがブロックされることなく、リアルタイムで顔認識を行うことができた。
 
-以下、Python側のコードの流れを示す。
-
+:::details Python側のコードの流れ
 1. Appの起動 `main()`
    起動するとまず環境変数の読み込みを行い、その後Tkinterのrootを作成し、その後Appクラスを作成する。
 2. Appクラスの初期化 `__init__`
@@ -94,6 +95,7 @@ GUI(Tkinter)、Websocket、Face_recognitionの3つを動かす。Tkinterはメ�
    受信したJPEG形式の画像データをopenCVでnumpy配列に変換し、グレースケールに変換するなどの処理を施した後、`face_recognition`ライブラリを使用して顔認証を行う。認識した顔の位置や名前を取得し、受信した画像の上に短形を描画して`self.latest_frame`に保存する。また認識した顔の名前をLINE Notifyで通知する。
 7. GUIの更新 `update_image()`
    `self.latest_frame`に格納された画像データをメインスレッドでTkinterのウィンドウに表示する。これにより、リアルタイムで顔認識の結果を確認することができる。
+:::
 
 # 実装が大変だった点
 
