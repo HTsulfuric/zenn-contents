@@ -6,7 +6,7 @@ topics:
   - "llm"
   - "gpu"
   - "ローカルllm"
-# publication_name: "kadomoto_lab"
+publication_name: "kadomoto_lab"
 published: false
 ---
 
